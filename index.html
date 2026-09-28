@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurelia Home Appliances | Book a Service</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            AURELIA
+            <span>HOME APPLIANCES</span>
+        </div>
+
+        <div class="header-info">
+            Service Booking
+        </div>
+    </header>
+
+    <!-- MAIN BOOKING AREA -->
+    <main class="booking-container">
+        <!-- INTRODUCTION -->
+        <section class="intro-section">
+            <div class="intro-overlay">
+            <p class="eyebrow">AURELIA SERVICE CENTER</p>
+            <h1>Book a Service</h1>
+            <p class="intro-text">
+                Schedule a convenient appointment for your home appliance.
+                choose the service you need and select an available time.
+            </p>
+            </div>
+        </section>
+
+        <!-- SERVICE SELECTION -->
+        <section class="booking-section">
+            <h2>What do you need help with?</h2>
+            <div class="service-grid">
+                <button class="service-card" data-service="Installation">
+                    <div class="service-icon">🔧</div>
+                    <h3>Installation</h3>
+                    <p>Professional installation for your new appliance.</p>
+                </button>
+
+                <button class="service-card" data-service="Delivery">
+                    <div class="service-icon">🚚</div>
+                    <h3>Delivery</h3>
+                    <p>Schedule a convenient appliance delivery.</p>
+                </button>
+
+                <button class="service-card" data-service="Home Consultation">
+                    <div class="service-icon">🏠</div>
+                    <h3>Home Consultation</h3>
+                    <p>Get expert advice for choosing the right appliance.</p>
+                </button>
+
+                <button class="service-card" data-service="Service Visit">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Service Visit</h3>
+                    <p>Arrange a visit for appliance support or maintenance.</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- APPLICATION SECTION -->
+        <section class="booking-section">
+            <h2>Select Your Appliances</h2>
+            <p class="section-description">
+                Choose the appliance you need assistance with.
+            </p>
+            <div class="form-group">
+                <label for="appliance">
+                    Appliance Type
+                </label>
+                <select id="appliance">
+                    <option value="">Select an appliance</option>
+
+                    <option value="Refrigerator">Refrigerator</option>
+
+                    <option value="Washing Machine">Washing Machine</option>
+
+                    <option value="Air Conditioner">Air Conditioner</option>
+
+                    <option value="Microwave Oven">Microwave Oven</option>
+
+                    <option value="Dishwasher">Dishwasher</option>
+
+                </select>
+            </div>
+        </section>
+
+        <!-- CONTINUE -->
+        <div class="continue-container">
+
+            <button id="continueBtn" class="primary-button">
+                Continue
+                <span>→</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Calendar Section -->
+    <section id="calendarSection" class="calendar-section hidden">
+
+        <div class="calendar-header">
+            <p class="eyebrow">STEP 2 OF 4</p>
+
+            <h2>Choose Your Date & Time</h2>
+
+            <p>
+                Select a convenient date and an available appointment time.
+            </p>
+        </div>
+
+
+        <!-- Calendar -->
+        <div class="calendar-container">
+
+            <div class="calendar-top">
+                <button id="previousMonth" class="calendar-nav">
+                    ←
+                </button>
+
+                <h3 id="currentMonth">
+                    September 2026
+                </h3>
+
+                <button id="nextMonth" class="calendar-nav">
+                    →
+                </button>
+            </div>
+
+
+            <!-- Days of the week -->
+            <div class="calendar-weekdays">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+            </div>
+
+
+            <!-- JavaScript will create the dates here -->
+            <div id="calendarDays" class="calendar-days"></div>
+
+        </div>
+
+
+        <!-- Selected Date -->
+        <div class="selected-date">
+            <p>Selected Date</p>
+
+            <strong id="selectedDate">
+                Please select a date
+            </strong>
+        </div>
+
+
+        <!-- Availability -->
+        <div class="availability-container">
+
+            <h3>Available Times</h3>
+
+            <p class="availability-message">
+                Select a date to view available appointment times.
+            </p>
+
+            <div id="timeSlots" class="time-slots"></div>
+
+        </div>
+
+
+        <!-- Calendar Navigation -->
+        <div class="calendar-actions">
+
+            <button id="backToService" class="secondary-button">
+                ← Back
+            </button>
+
+            <button id="continueToDetails" class="primary-button">
+                Continue
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- CUSTOMER DETAILS SECTION -->
+    <section id="detailsSection" class="calendar-section hidden">
+
+        <div class="calendar-header">
+            <p class="eyebrow">STEP 3 OF 4</p>
+
+            <h2>Your Details</h2>
+
+            <p>
+                Please enter your contact information to complete your booking.
+            </p>
+        </div>
+
+        <div class="booking-section">
+
+            <div class="form-group">
+                <label for="customerName">Full Name</label>
+                <input type="text" id="customerName" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="customerEmail">Email Address</label>
+                <input type="email" id="customerEmail" placeholder="Enter your email address">
+            </div>
+
+            <div class="form-group">
+                <label for="customerPhone">Phone Number</label>
+                <input type="tel" id="customerPhone" placeholder="Enter your phone number">
+            </div>
+
+            <div class="form-group">
+                <label for="customerAddress">Address</label>
+                <textarea id="customerAddress" placeholder="Enter your address" rows="4"></textarea>
+            </div>
+
+        </div>
+
+        <div class="calendar-actions">
+
+            <button id="backToCalendar" class="secondary-button">
+                ← Back
+            </button>
+
+            <button id="continueToReview" class="primary-button">
+                Continue
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- REVIEW BOOKING SECTION -->
+    <section id="reviewSection" class="calendar-section hidden">
+
+        <div class="calendar-header">
+            <p class="eyebrow">STEP 4 OF 4</p>
+
+            <h2>Review Your Booking</h2>
+
+            <p>
+                Please review your booking details before confirming.
+            </p>
+        </div>
+
+        <div class="booking-section">
+
+            <div class="review-item">
+                <span>Service</span>
+                <strong id="reviewService">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Appliance</span>
+                <strong id="reviewAppliance">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Date</span>
+                <strong id="reviewDate">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Appointment Time</span>
+                <strong id="reviewTime">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Full Name</span>
+                <strong id="reviewName">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Email</span>
+                <strong id="reviewEmail">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Phone</span>
+                <strong id="reviewPhone">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Address</span>
+                <strong id="reviewAddress">-</strong>
+            </div>
+
+        </div>
+
+        <div class="calendar-actions">
+
+            <button id="backToDetails" class="secondary-button">
+                ← Back
+            </button>
+
+            <button id="confirmBooking" class="primary-button">
+                Confirm Booking
+                <span>✓</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- CONFIRMATION SECTION -->
+    <section id="confirmationSection" class="calendar-section hidden">
+
+        <div class="confirmation-icon">
+            ✓
+        </div>
+
+        <div class="calendar-header">
+            <p class="eyebrow">BOOKING CONFIRMED</p>
+
+            <h2>Your Service Has Been Booked</h2>
+
+            <p>
+                Thank you for choosing Aurelia Home Appliances.
+                Your appointment has been successfully scheduled.
+            </p>
+        </div>
+
+        <div class="booking-section">
+
+            <div class="review-item">
+                <span>Booking Reference</span>
+                <strong id="bookingReference">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Service</span>
+                <strong id="confirmationService">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Appliance</span>
+                <strong id="confirmationAppliance">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Date</span>
+                <strong id="confirmationDate">-</strong>
+            </div>
+
+            <div class="review-item">
+                <span>Appointment Time</span>
+                <strong id="confirmationTime">-</strong>
+            </div>
+
+        </div>
+
+        <div class="confirmation-actions">
+
+            <button id="bookAnotherService" class="primary-button">
+                Book Another Service
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <h3>AURELIA</h3>
+                <p>HOME APPLIANCES</p>
+            </div>
+
+            <div class="footer-info">
+                <p>© 2026 Aurelia Home Appliances</p>
+                <p>Service Booking System</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/app.js"></script>
+    <script src="js/calendar.js"></script>
+
+</body>
+
+</html>

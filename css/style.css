@@ -1,0 +1,744 @@
+/* GENERAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+/* HEADER*/
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e9f0;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #152238;
+}
+
+.logo span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.header-info {
+    font-size: 14px;
+    color: #667085;
+}
+
+/* MAIN CONTAINER */
+.booking-container {
+    width: 86%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+/* INTRODUCTION*/
+.intro-section {
+    max-width: 650px;
+    margin-bottom: 55px;
+}
+
+.eyebrow {
+    color: #1769aa;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.intro-section h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.intro-text {
+    color: #667085;
+    font-size: 17px;
+    max-width: 600px;
+}
+
+/* BOOKING SECTIONS */
+.booking-section {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    border: 1px solid #e5e9f0;
+}
+
+.booking-section h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.section-description {
+    color: #667085;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 22px;
+}
+
+/* SERVICE CARDS */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid #dfe5ec;
+    border-radius: 14px;
+    padding: 26px 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.service-card:hover {
+    border-color: #1769aa;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(20, 40, 70, 0.10);
+}
+
+.service-card:focus {
+    outline: 3px solid rgba(23, 105, 170, 0.18);
+}
+
+.service-card.selected {
+    border-color: #1769aa;
+    background: #f0f7ff;
+    box-shadow: 0 8px 20px rgba(23, 105, 170, 0.12);
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f7ff;
+    border-radius: 10px;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.service-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    color: #667085;
+    font-size: 13px;
+}
+
+/* FORM */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dfe5ec;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 15px;
+    color: #172033;
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #1769aa;
+    box-shadow: 0 0 0 3px rgba(23, 105, 107, 0.1);
+}
+
+/* CONTINUE BUTTON */
+.continue-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.primary-button {
+    border: none;
+    background: #1769aa;
+    color: #ffffff;
+    padding: 15px 28px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    box-shadow: 0 4px 10px rgba(23, 105, 170, 0.15);
+}
+
+.primary-button:hover {
+    background: #125589;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(23, 105, 170, 0.20);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+}
+
+.primary-button span {
+    margin-left: 10px;
+}
+
+.service-card.selected {
+    border-color: #1769aa;
+    background: #f0f7ff;
+    box-shadow: 0 8px 20px rgba(23, 105, 170, 0.12);
+}
+
+/* CALENDAR SECTION */
+
+.hidden {
+    display: none;
+}
+
+.calendar-section {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid #e5e9f0;
+}
+
+.calendar-header {
+    margin-bottom: 30px;
+}
+
+.calendar-header h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.calendar-header p {
+    color: #667085;
+}
+
+
+/* Calendar box */
+
+.calendar-container {
+    border: 1px solid #e5e9f0;
+    border-radius: 14px;
+    padding: 28px;
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(20, 40, 70, 0.04);
+}
+
+.calendar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.calendar-top h3 {
+    font-size: 20px;
+}
+
+.calendar-nav {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #dfe5ec;
+    background: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.calendar-nav:hover {
+    background: #f0f7ff;
+    border-color: #1769aa;
+}
+
+
+/* Weekdays */
+
+.calendar-weekdays,
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-weekdays {
+    margin-bottom: 8px;
+}
+
+.calendar-weekdays span {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #667085;
+}
+
+
+/* Dates */
+
+.calendar-days button {
+    min-height: 48px;
+    border: 1px solid transparent;
+    background: #ffffff;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.calendar-days button:hover {
+    background: #f0f7ff;
+    border-color: #1769aa;
+}
+
+.calendar-days button.selected {
+    background: #1769aa;
+    color: #ffffff;
+    border-color: #1769aa;
+    font-weight: 600;
+}
+
+.calendar-days button.disabled {
+    color: #b8bec8;
+    background: #f7f8fa;
+    cursor: not-allowed;
+}
+
+
+/* Selected date */
+
+.selected-date {
+    margin-top: 25px;
+    padding: 18px;
+    background: #f4f7fb;
+    border-radius: 10px;
+}
+
+.selected-date p {
+    color: #667085;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.selected-date strong {
+    font-size: 16px;
+}
+
+
+/* Availability */
+
+.availability-container {
+    margin-top: 25px;
+}
+
+.availability-container h3 {
+    margin-bottom: 8px;
+}
+
+.availability-message {
+    color: #667085;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.time-slot {
+    padding: 13px;
+    background: #ffffff;
+    border: 1px solid #dfe5ec;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.time-slot:hover {
+    border-color: #1769aa;
+    background: #f0f7ff;
+}
+
+.time-slot.selected {
+    background: #1769aa;
+    color: #ffffff;
+    border-color: #1769aa;
+}
+
+.time-slot.unavailable {
+    background: #f4f4f5;
+    color: #a0a4ab;
+    cursor: not-allowed;
+}
+
+
+/* Calendar buttons */
+
+.calendar-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.secondary-button {
+    border: 1px solid #dfe5ec;
+    background: #ffffff;
+    color: #172033;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    background: #f4f7fb;
+}
+
+
+/* Mobile calendar */
+
+@media (max-width: 600px) {
+
+    .calendar-section {
+        padding: 22px;
+    }
+
+    .calendar-container {
+        padding: 15px;
+    }
+
+    .calendar-weekdays,
+    .calendar-days {
+        gap: 4px;
+    }
+
+    .calendar-days button {
+        min-height: 40px;
+    }
+
+    .time-slots {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* CUSTOMER DETAILS FORM */
+
+#detailsSection .booking-section {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+#detailsSection .form-group input,
+#detailsSection .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dfe5ec;
+    border-radius: 8px;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #172033;
+}
+
+#detailsSection .form-group input:focus,
+#detailsSection .form-group textarea:focus {
+    outline: none;
+    border-color: #1769aa;
+    box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.1);
+}
+
+#detailsSection .form-group textarea {
+    resize: vertical;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .intro-section h1 {
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    .header-info {
+        display: none;
+    }
+
+    .booking-container {
+        width: 92%;
+        padding: 45px 0;
+    }
+
+    .intro-section h1 {
+        font-size: 34px;
+    }
+
+    .intro-text {
+        font-size: 15px;
+    }
+
+    .booking-section {
+        padding: 22px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .continue-container {
+        justify-content: stretch;
+    }
+
+    .primary-button {
+        width: 100%;
+    }
+}
+
+/* FOOTER */
+
+.footer {
+    background: #ffffff;
+    border-top: 1px solid #e5e9f0;
+    margin-top: 60px;
+    padding: 30px 7%;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-brand h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #152238;
+    margin-bottom: 3px;
+}
+
+.footer-brand p {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #6b7280;
+}
+
+.footer-info {
+    text-align: right;
+}
+
+.footer-info p {
+    color: #667085;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+
+/* FOOTER MOBILE */
+
+@media (max-width: 550px) {
+
+    .footer {
+        margin-top: 40px;
+        padding: 25px 5%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .footer-info {
+        text-align: left;
+    }
+}
+
+/* CONFIRMATION SCREEN */
+
+#confirmationSection {
+    text-align: center;
+    max-width: 900px;
+    margin: 60px auto;
+}
+
+.confirmation-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: #eaf6ff;
+    color: #1769aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+#confirmationSection .calendar-header {
+    margin-bottom: 30px;
+}
+
+#confirmationSection .calendar-header h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+#confirmationSection .calendar-header p:last-child {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#confirmationSection .booking-section {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#confirmationSection .review-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e9f0;
+}
+
+#confirmationSection .review-item:last-child {
+    border-bottom: none;
+}
+
+#confirmationSection .review-item span {
+    color: #667085;
+    font-size: 14px;
+}
+
+#confirmationSection .review-item strong {
+    color: #172033;
+    font-size: 15px;
+    text-align: right;
+}
+
+.confirmation-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.confirmation-actions .primary-button {
+    min-width: 220px;
+}
+
+/* HERO BACKGROUND */
+
+.intro-section {
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 55px;
+
+    background-image:
+        linear-gradient(
+            rgba(10, 20, 35, 0.58),
+            rgba(10, 20, 35, 0.58)
+        ),
+        url("../images/appliance-service.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.intro-overlay {
+    max-width: 650px;
+    padding: 55px;
+}
+
+.intro-section .eyebrow {
+    color: #ffffff;
+}
+
+.intro-section h1 {
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.intro-section .intro-text {
+    color: #ffffff;
+    font-size: 17px;
+    max-width: 600px;
+}
+
+
+/* HERO MOBILE */
+
+@media (max-width: 550px) {
+
+    .intro-section {
+        min-height: 430px;
+    }
+
+    .intro-overlay {
+        padding: 30px;
+    }
+
+    .intro-section h1 {
+        font-size: 34px;
+    }
+
+    .intro-section .intro-text {
+        font-size: 15px;
+    }
+}
